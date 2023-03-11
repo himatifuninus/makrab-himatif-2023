@@ -1,6 +1,5 @@
 import { supabase } from "../../supabase";
 import { useState } from "react";
-
 import { useNavigate } from "react-router-dom";
 const Regist = () => {
   const [nama, setNama] = useState("");
@@ -20,6 +19,7 @@ const Regist = () => {
         },
       ]);
       if (error) throw error;
+
       navigate("/peserta");
     } catch (error) {
       console.log(error);

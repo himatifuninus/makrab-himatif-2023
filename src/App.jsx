@@ -1,11 +1,11 @@
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import Router from "./router";
-import MainLayout from "./layouts/MainLayout";
-import ContentLayout from "./layouts/ContentLayout";
-import Error from "./components/Error";
-import Loading from "./components/Loading";
-import Navbar from "./components/Navbar";
+const MainLayout = lazy(() => import("./layouts/MainLayout"));
+const ContentLayout = lazy(() => import("./layouts/ContentLayout"));
+const Error = lazy(() => import("./components/Error"));
+const Loading = lazy(() => import("./components/Loading"));
+const Navbar = lazy(() => import("./components/Navbar"));
 const App = () => {
   return (
     <MainLayout>

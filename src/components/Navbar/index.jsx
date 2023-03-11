@@ -48,9 +48,11 @@ export default function Navbar() {
                 className="px-3 py-2 inline-block lg:flex items-center text-md uppercase font-bold leading-snug"
                 to="/"
               >
-                <button className="ml-2 flex items-center text-[20px] font-medium">
+                <button
+                  onClick={() => setNavbarOpen(!navbarOpen)}
+                  className="ml-2 flex items-center text-[20px] font-medium"
+                >
                   Home
-                  <i className="text-lg leading-lg"></i>
                 </button>
               </Link>
             </li>
@@ -59,7 +61,10 @@ export default function Navbar() {
                 className="px-3 py-2 inline-block lg:flex items-center text-md uppercase font-bold leading-snug"
                 to="/regist"
               >
-                <button className="ml-2 flex items-center text-[20px] font-medium">
+                <button
+                  onClick={() => setNavbarOpen(!navbarOpen)}
+                  className="ml-2 flex items-center text-[20px] font-medium"
+                >
                   Regist
                 </button>
               </Link>
@@ -69,7 +74,10 @@ export default function Navbar() {
                 className="px-3 py-2 inline-block lg:flex items-center text-md uppercase font-bold leading-snug"
                 to="/peserta"
               >
-                <button className="ml-2 flex items-center text-[20px] font-medium">
+                <button
+                  onClick={() => setNavbarOpen(!navbarOpen)}
+                  className="ml-2 flex items-center text-[20px] font-medium"
+                >
                   Peserta
                   <i className="text-lg leading-lg"></i>
                 </button>
