@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../../supabase";
-import { useNavigate, useParams } from "react-router-dom";
 const Peserta = () => {
   const [peserta_makrab, setPesertaMakrab] = useState([]);
 
@@ -9,9 +8,14 @@ const Peserta = () => {
   }, []);
 
   const getPeserta_makrab = async () => {
-    const res = await supabase.from("user").select();
-    setPesertaMakrab(res.data);
+    try {
+      const res = await supabase.from("user").select();
+      setPesertaMakrab(res.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
+
   return (
     <div>
       <div className="container mx-auto pt-24">
@@ -38,7 +42,7 @@ const Peserta = () => {
                 {peserta_makrab &&
                   peserta_makrab.length > 0 &&
                   peserta_makrab.map((peserta, index) => (
-                    <tr key={peserta.id} className="text-teal-900">
+                    <tr key={index} className="text-teal-900">
                       <td className="py-3 px-2 lg:px-9">{index + 1}</td>
                       <td className="py-3 px-2 lg:px-9">{peserta.nama}</td>
                       <td className="py-3 px-2 lg:px-9">{peserta.kelas}</td>
